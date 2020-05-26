@@ -25,6 +25,7 @@ C_FLAGS = -g3
 O_FILES := $(patsubst %.cpp,o/%.o,$(C_FILES))
 
 all:
+	mkdir -p o
 	make $(OUTPUT)
 
 $(OUTPUT): $(O_FILES)
