@@ -1,4 +1,7 @@
-
+#Example:   export set NAC_LIB_DIR=~/binCLib
+ifeq ($(NAC_LIB_DIR),)
+  $(error NAC_LIB_DIR is not set)
+endif
 
 STATIC_LIB = 1
 
@@ -23,6 +26,7 @@ C_FLAGS = -g3
 O_FILES := $(patsubst %.cpp,o/%.o,$(C_FILES))
 
 all:
+	mkdir -p o
 	make $(OUTPUT)
 
 $(OUTPUT): $(O_FILES)
