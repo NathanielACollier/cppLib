@@ -1,4 +1,7 @@
-
+#Example:   export set NAC_LIB_DIR=~/binCLib
+ifeq ($(NAC_LIB_DIR),)
+  $(error NAC_LIB_DIR is not set)
+endif
 
 STATIC_LIB = 1
 
@@ -40,4 +43,3 @@ o/%.o: %.cpp
 
 clean:
 	rm -f $(OUTPUT) $(O_FILES)
-
